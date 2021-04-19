@@ -50,8 +50,7 @@ class DataSetFolder(data.Dataset):
     def __len__(self):
         return len(self.samples)
     
-
-def load_data(model, device, valdir):
+def load_data(model, device, valdir, batch_size):
     #validation directory; for now it's in this folder
     #valdir = 'val'
     if model == 'mobilenet':
@@ -65,7 +64,7 @@ def load_data(model, device, valdir):
     
     #instantiate dataset and data loader. the __getitem__ returns preprocessed image and labels
     dataset = DataSetFolder(valdir, device)
-    val_loader = data.DataLoader(dataset, batch_size=32, shuffle=False, num_workers=16, pin_memory=True)
+    val_loader = data.DataLoader(dataset, batch_size=batch_size, shuffle=False, num_workers=16, pin_memory=True)
 
     return val_loader
 
