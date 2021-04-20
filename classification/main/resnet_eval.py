@@ -2,6 +2,8 @@ import torch
 import torchvision
 from torchvision import transforms
 from PIL import Image
+import sys
+sys.path.insert(0, '../utility')
 from dataloader import *
 from eval import AverageMeter, accuracy
 
