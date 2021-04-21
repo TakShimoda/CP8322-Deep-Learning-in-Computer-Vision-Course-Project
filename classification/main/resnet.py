@@ -18,7 +18,7 @@ def constant_init(module, val, bias=0):
         nn.init.constant_(module.bias, bias)
 
 class ResNetDCT_Upscaled_Static(nn.Module):
-    def __init__(self, channels=24, pretrained=False, inputgate=True, inputmix=False):
+    def __init__(self, channels=24, pretrained=True, inputgate=False, inputmix=False):
         super(ResNetDCT_Upscaled_Static, self).__init__()
 
         self.input_gate = inputgate
@@ -55,7 +55,7 @@ class ResNetDCT_Upscaled_Static(nn.Module):
             kaiming_init(self.inputmix_layer)
 
         if inputgate:
-            self.inp_GM = GateModule192()
+            self.inp_GM = GateModule192(channels=channels)
             self._initialize_weights()
 
     def _initialize_weights(self):
@@ -78,7 +78,7 @@ class ResNetDCT_Upscaled_Static(nn.Module):
             x, inp_atten = self.inp_GM(x)
 
         x = self.model(x)
-        x = x.reshape(x.size(0), -1)  # 2048
+        x = x.reshape(x.size(0), -1)
         x = self.fc(x)
         if self.input_gate:
             return x, inp_atten
