@@ -13,6 +13,8 @@ http://image-net.org/challenges/LSVRC/2012/2012-downloads
 
 Note: training data is very large (138GB) for task 1 & 2 and should be downloaded with a download manager and the folder should symlink to the downloaded location. Go to the data folder and its README for more details on data preparation.
 
+The 'main' folder contains the main files for running the code, including the testing loop and the resnet model. The 'utility' folder contains other helper code, including the dataloader and functions used for transforming/preprocessing the input images.
+
 # Run the code
 
 Clone the repository: 
