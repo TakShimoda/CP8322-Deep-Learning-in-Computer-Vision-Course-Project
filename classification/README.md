@@ -31,5 +31,6 @@ To run the code to be tested on ILSVRC 2012 validation dataset, run the code by 
 For example, to run on a batch size of 200 for the baseline ResNet-50 that's pretrained on ILSVRC 2012, run:
 
 ```bash
+cd CP8322-Deep-Learning-in-Computer-Vision-Course-Project/main
 python3 resnet_eval.py --batch 200 --DCT False --pretrained True
 ```
