@@ -11,4 +11,25 @@ data
 Download imagenet 2012 ILSVRC2012 training and validation data for tasks 1 and 2 from the following URL:
 http://image-net.org/challenges/LSVRC/2012/2012-downloads
 
-Note: training data is very large (138GB) for task 1 & 2 and should be downloaded with a download manager and the folder should symlink to the downloaded location.
+Note: training data is very large (138GB) for task 1 & 2 and should be downloaded with a download manager and the folder should symlink to the downloaded location. Go to the data folder and its README for more details on data preparation.
+
+# Run the code
+
+Clone the repository: 
+
+```bash
+git clone https://github.com/TakShimoda/CP8322-Deep-Learning-in-Computer-Vision-Course-Project.git
+```
+
+Install the dependencies(it is recommended to use a virtual environment):
+
+```bash
+install -r requirements.txt
+```
+
+To run the code to be tested on ILSVRC 2012 validation dataset, run the code by setting the batch size, whether to use DCT, and whether to load a pretrained model or not.
+For example, to run on a batch size of 200 for the baseline ResNet-50 that's pretrained on ILSVRC 2012, run:
+
+```bash
+python3 resnet_eval.py --batch 200 --DCT False --pretrained True
+```
