@@ -24,7 +24,7 @@ git clone https://github.com/TakShimoda/CP8322-Deep-Learning-in-Computer-Vision-
 Install the dependencies(it is recommended to use a virtual environment):
 
 ```bash
-install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 To run the code to be tested on ILSVRC 2012 validation dataset, run the code by setting the batch size, whether to use DCT, and whether to load a pretrained model or not.
