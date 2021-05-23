@@ -60,7 +60,7 @@ if __name__ == '__main__':
         top_1, top_5 = accuracy(output, target, (1, 5))
         top1.update(top_1.item(), img.size(0))
         top5.update(top_5.item(), img.size(0))
-        if index % 50 == 0:
+        if index % 50 == 0 and index > 0:
             print('Image number: %d || Top 1 Accuracy: %-2.4f || Top 5 Accuracy: %-2.4f' %(index*batch_size, top1.avg, top5.avg))
 
     print('Top 1 Accuracy: %-2.4f' % (top1.avg))
