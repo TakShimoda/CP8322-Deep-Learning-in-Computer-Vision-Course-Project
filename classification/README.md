@@ -35,5 +35,5 @@ For example, to run on a batch size of 200 for the baseline ResNet-50 that's pre
 
 ```bash
 cd main
-python3 resnet_eval.py --batch 200 --DCT False --pretrained True
+python3 test.py --batch 200 --DCT False --pretrained True
 ```
